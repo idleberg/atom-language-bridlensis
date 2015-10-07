@@ -16,7 +16,7 @@ Atom language support for [BridleNSIS](https://github.com/henrikor2/bridlensis),
 
 ### GitHub
 
-If —for some reason— you can't use `apm`, you can clone the package using Git.
+If —for some reason— you can't use `apm`, you can clone the package using Git:
 
 ```bash
 cd ~/.atom/packages/
