@@ -16,8 +16,10 @@ Atom language support for [BridleNSIS](https://github.com/henrikor2/bridlensis),
 
 ### GitHub
 
-1. Change directory to `~/.atom/packages/`
-2. Clone repository `git clone https://github.com/idleberg/atom-language-bridlensis language-bridlensis`
+```bash
+cd ~/.atom/packages/
+git clone https://github.com/idleberg/atom-language-bridlensis language-bridlensis
+```
 
 ## License
 
