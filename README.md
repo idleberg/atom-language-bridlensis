@@ -5,6 +5,7 @@
 [![apm](https://img.shields.io/apm/dm/language-bridlensis.svg?style=flat-square)](https://atom.io/packages/language-bridlensis)
 [![Travis](https://img.shields.io/travis/idleberg/atom-language-bridlensis.svg?style=flat-square)](https://travis-ci.org/idleberg/atom-language-bridlensis)
 [![David](https://img.shields.io/david/dev/idleberg/atom-language-bridlensis.svg?style=flat-square)](https://david-dm.org/idleberg/atom-language-bridlensis#info=devDependencies)
+[![Gitter](https://img.shields.io/badge/chat-Gitter-ff69b4.svg?style=flat-square)](https://gitter.im/NSIS-Dev)
 
 Atom language support for [BridleNSIS](https://github.com/henrikor2/bridlensis), consisting of grammar and snippets
 
