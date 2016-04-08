@@ -3,6 +3,7 @@ fileTypes: [
   "nsh"
 ]
 name: "BridleNSIS"
+comment: "https://github.com/atom/atom-language-bridlensis"
 patterns: [
   {
     include: "source.nsis"
