@@ -20,6 +20,10 @@ Atom language support for [BridleNSIS](https://github.com/henrikor2/bridlensis),
 1. Change directory `cd ~/.atom/packages/`
 2. Clone repository `git clone https://github.com/idleberg/atom-language-inno language-inno`
 
+## Usage
+
+To avoid interference with vanilla NSIS, consider using the file-extensions `.bridle-nsis` and `.bridle-nsh`. Alternatively, you can set the syntax to *“BridleNSIS”* (`source.nsis.bridle`) manually.
+
 ## License
 
 This work is dual-licensed under the [The MIT License](https://opensource.org/licenses/MIT) and the [GNU General Public License, version 2.0](https://opensource.org/licenses/GPL-2.0)

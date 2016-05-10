@@ -1,6 +1,7 @@
 fileTypes: [
-  "nsi"
-  "nsh"
+  "bridle-nsi"
+  "bridle-nsis"
+  "bridle-nsh"
 ]
 name: "BridleNSIS"
 comment: "https://github.com/atom/atom-language-bridlensis"
