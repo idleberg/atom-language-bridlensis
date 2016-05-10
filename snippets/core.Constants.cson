@@ -1,4 +1,4 @@
 '.source.nsis.bridle':
   '${BRIDLE_NULL}':
     'prefix': 'BRIDLE_NULL'
-    'body': '\${BRIDLE_NULL}'
+    'body': '\${BRIDLE_NULL}$1'
