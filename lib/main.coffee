@@ -26,7 +26,7 @@ module.exports = BridlensisCore =
       @getPath (stdout) ->
         bridleJar  = atom.config.get('language-bridlensis.pathToJar')
         if !bridleJar?
-          atom.notifications.addError("**language-bridlensis**: no valid JAR file specified in your config", dismissable: false)
+          atom.notifications.addError("**language-bridlensis**: no valid `BridleNSIS.jar` specified in your config", dismissable: false)
           return
 
         exec "\"java\" -jar \"#{bridleJar}\" \"#{script}\"", (error, stdout, stderr) ->
