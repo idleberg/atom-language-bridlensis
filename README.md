@@ -39,7 +39,7 @@ Make sure to specify the path for BridleNSIS JAR file in your `config.cson`.
 
 #### Third-party packages
 
-Should you already use the [build](https://atom.io/packages/build) package, you can install the [build-nsl](https://atom.io/packages/build-bridlensis) provider to build your code.
+Should you already use the [build](https://atom.io/packages/build) package, you can install the [build-bridlensis](https://atom.io/packages/build-bridlensis) provider to build your code.
 
 ## License
 
