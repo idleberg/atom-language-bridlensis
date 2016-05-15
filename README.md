@@ -24,6 +24,23 @@ Atom language support for [BridleNSIS](https://github.com/henrikor2/bridlensis),
 
 To avoid interference with vanilla NSIS, consider using the file-extensions `.bridle-nsis` and `.bridle-nsh`. Alternatively, you can set the syntax to *“BridleNSIS”* (`source.nsis.bridle`) manually.
 
+### Building
+
+As of recently, this package contains a rudimentary build system to translate BridleNSIS code. To do so, select *BridleNSIS: Save & Compile”* from the [command-palette](https://atom.io/docs/latest/getting-started-atom-basics#command-palette) or use the keyboard shortcut.
+
+Make sure to specify the path for BridleNSIS JAR file in your `config.cson`.
+
+**Example:**
+
+```cson
+"language-bridlensis":
+  pathToJar: "/full/path/to/bridle.jar"
+```
+
+#### Third-party packages
+
+Should you already use the [build](https://atom.io/packages/build) package, you can install the [build-nsl](https://atom.io/packages/build-bridlensis) provider to build your code.
+
 ## License
 
 This work is dual-licensed under [The MIT License](https://opensource.org/licenses/MIT) and the [GNU General Public License, version 2.0](https://opensource.org/licenses/GPL-2.0)
