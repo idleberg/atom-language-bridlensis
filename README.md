@@ -17,8 +17,19 @@ Atom language support for [BridleNSIS](https://github.com/henrikor2/bridlensis),
 
 ### GitHub
 
-1. Change directory `cd ~/.atom/packages/`
-2. Clone repository `git clone https://github.com/idleberg/atom-language-inno language-inno`
+Change to your Atom packages directory:
+
+```bash
+# Windows
+$ cd %USERPROFILE%\.atom\packages
+
+# Mac OS X & Linux
+$ cd ~/.atom/packages/
+```
+
+Clone repository as `language-bridlensis`:
+
+`$ git clone https://github.com/idleberg/atom-language-bridlensis language-bridlensis`
 
 ## Usage
 
