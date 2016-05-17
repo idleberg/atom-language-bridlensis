@@ -45,7 +45,7 @@ Make sure to specify the path for `BridleNSIS.jar` in your `config.cson`.
 
 ```cson
 "language-bridlensis":
-  pathToJar: "/full/path/to/bridle.jar"
+  pathToJar: "/full/path/to/BridleNSIS.jar"
 ```
 
 #### Third-party packages
