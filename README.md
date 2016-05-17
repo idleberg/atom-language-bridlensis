@@ -7,7 +7,7 @@
 [![David](https://img.shields.io/david/dev/idleberg/atom-language-bridlensis.svg?style=flat-square)](https://david-dm.org/idleberg/atom-language-bridlensis#info=devDependencies)
 [![Gitter](https://img.shields.io/badge/chat-Gitter-ff69b4.svg?style=flat-square)](https://gitter.im/NSIS-Dev/Atom)
 
-Atom language support for [BridleNSIS](https://github.com/henrikor2/bridlensis), consisting of grammar and snippets
+Atom language support for [BridleNSIS](https://github.com/henrikor2/bridlensis), including grammar, snippets and a rudimentary build system
 
 ## Installation
 
