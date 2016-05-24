@@ -39,7 +39,7 @@ To avoid interference with vanilla NSIS, consider using the file-extensions `.br
 
 As of recently, this package contains a rudimentary build system to translate BridleNSIS code. To do so, select *BridleNSIS: Save & Compile”* from the [command-palette](https://atom.io/docs/latest/getting-started-atom-basics#command-palette) or use the keyboard shortcut.
 
-Make sure to specify the path for `BridleNSIS.jar` in your `config.cson`.
+Make sure to specify the path for `BridleNSIS.jar` in your Atom [configuration](http://flight-manual.atom.io/using-atom/sections/basic-customization/#_global_configuration_settings).
 
 **Example:**
 
