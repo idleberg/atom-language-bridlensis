@@ -23,13 +23,15 @@ Change to your Atom packages directory:
 # Windows
 $ cd %USERPROFILE%\.atom\packages
 
-# Mac OS X & Linux
+# Linux & macOS
 $ cd ~/.atom/packages/
 ```
 
 Clone repository as `language-bridlensis`:
 
-`$ git clone https://github.com/idleberg/atom-language-bridlensis language-bridlensis`
+```bash
+$ git clone https://github.com/idleberg/atom-language-bridlensis language-bridlensis
+```
 
 ## Usage
 
