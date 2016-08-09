@@ -16,7 +16,8 @@ module.exports = BridlensisCore =
     @subscriptions.add atom.commands.add 'atom-workspace', 'BridleNSIS:save-&-compile': => @buildScript()
 
   deactivate: ->
-    @subscriptions.dispose()
+    @subscriptions?.dispose()
+    @subscriptions = null
 
   buildScript: ->
     editor = atom.workspace.getActiveTextEditor()
