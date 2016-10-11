@@ -20,7 +20,7 @@ patterns: [
     name: "support.constant.nsis"
   }
   {
-    match: "[\\\\A-Za-z_.][\\w]*(?=\\s*\\()"
+    match: "[\\w\\.]+[\\w]*(\\(.*?\\))+"
     name: "meta.function.nsis"
   }
   {
