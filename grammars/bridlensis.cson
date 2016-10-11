@@ -1,4 +1,6 @@
 fileTypes: [
+  "bnsi"
+  "bnsh"
   "bridle-nsi"
   "bridle-nsis"
   "bridle-nsh"
