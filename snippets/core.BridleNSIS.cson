@@ -327,13 +327,13 @@
     'body': 'RegDLL("${1:file}"${2:, ${3:options}})$4'
   'Rename()':
     'prefix': 'Rename()'
-    'body': 'Rename("${1:source}", "${2:target}"${3:, "${4:options}"}})$5'
+    'body': 'Rename("${1:source}", "${2:target}"${3:, "${4:options}"})$5'
   'ReserveFile()':
     'prefix': 'ReserveFile()'
-    'body': 'ReserveFile("${1:file}"${2:, "${3:options}"}})$4'
+    'body': 'ReserveFile("${1:file}"${2:, "${3:options}"})$4'
   'RMDir()':
     'prefix': 'RMDir()'
-    'body': 'RMDir("${1:directory}"${2:, "${3:options}"}})$4'
+    'body': 'RMDir("${1:directory}"${2:, "${3:options}"})$4'
   'SearchPath()':
     'prefix': 'SearchPath()'
     'body': 'SearchPath("${1:filename}")$2'
@@ -486,10 +486,10 @@
     'body': 'Var ${1:user_vars}$2'
   'WordFind()':
     'prefix': 'WordFind()'
-    'body': 'WordFind("${1:string}", "${2:options}", "${3:delimiter1}"${4:, "${5:delimiter2}"}${6:, "${7:center}"}})$8'
+    'body': 'WordFind("${1:string}", "${2:options}", "${3:delimiter1}"${4:, "${5:delimiter2}"${6:, "${7:center}"}})$8'
   'WordFindS()':
     'prefix': 'WordFindS()'
-    'body': 'WordFindS("${1:string}", "${2:options}", "${3:delimiter1}"${4:, "${5:delimiter2}"}${6:, "${7:center}"}})$8'
+    'body': 'WordFindS("${1:string}", "${2:options}", "${3:delimiter1}"${4:, "${5:delimiter2}"${6:, "${7:center}"}})$8'
   'WordReplace()':
     'prefix': 'WordReplace()'
     'body': 'WordReplace("${1:string}", "${2:word1}", "${3:word2}", "${4:options}")$5'
