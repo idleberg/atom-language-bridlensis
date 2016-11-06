@@ -15,6 +15,13 @@ module.exports = BridlensisCore =
       description: "Specify the full path to `BridleNSIS.jar`"
       type: "string"
       default: ""
+      order: 0
+    customArguments:
+      title: "Custom Arguments"
+      description: "Specify your preferred arguments for BridleNSIS"
+      type: "string"
+      default: ""
+      order: 1
   subscriptions: null
 
   activate: (state) ->
@@ -45,11 +52,16 @@ module.exports = BridlensisCore =
 
       @getPath (stdout) ->
         bridleJar  = atom.config.get('language-bridlensis.pathToJar')
+        
         if not bridleJar
           atom.notifications.addError("**language-bridlensis**: no valid `BridleNSIS.jar` specified in your config", dismissable: false)
           return
 
-        exec "\"java\" -jar \"#{bridleJar}\" \"#{script}\"", (error, stdout, stderr) ->
+        customArguments = atom.config.get('language-bridlensis.customArguments').trim().split(" ")
+        customArguments.push("\"#{script}\"")
+        customArguments.join(" ")
+
+        exec "\"java\" -jar \"#{bridleJar}\" #{customArguments}", (error, stdout, stderr) ->
           if error isnt null
             # bridleJar error from stdout, not error!
             atom.notifications.addError("**#{script}**", detail: error, dismissable: true)
