@@ -15,7 +15,7 @@ Atom language support for [BridleNSIS](https://github.com/henrikor2/bridlensis),
 
 * Install package `apm install language-bridlensis` (or use the GUI)
 
-### GitHub
+### Using Git
 
 Change to your Atom packages directory:
 
