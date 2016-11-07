@@ -59,7 +59,7 @@ module.exports = BridlensisCore =
           customArguments.push(script)
 
         args = defaultArguments.concat(customArguments)
-        bridleCmd = spawn('java', args);
+        bridleCmd = spawn('java', args)
 
         bridleCmd.stderr.on 'data', (data) ->
           atom.notifications.addError("Transpiling failed", detail: data, dismissable: true)
@@ -75,9 +75,9 @@ module.exports = BridlensisCore =
 
   getPath: (callback) ->
     if os.platform() is 'win32'
-      whichJava = spawn('where', ['java']);
+      whichJava = spawn('where', ['java'])
     else
-      whichJava = spawn('which', ['java']);
+      whichJava = spawn('which', ['java'])
 
     # Find Java
     whichJava.stderr.on 'data', (data) ->
