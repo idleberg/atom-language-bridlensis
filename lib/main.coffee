@@ -57,11 +57,17 @@ module.exports = BridlensisCore =
           atom.notifications.addError("**language-bridlensis**: no valid `BridleNSIS.jar` specified in your config", dismissable: false)
           return
 
+        defaultArguments = ["java", "-jar", nslJar]
         customArguments = atom.config.get('language-bridlensis.customArguments').trim().split(" ")
-        customArguments.push("\"#{script}\"")
-        customArguments.join(" ")
 
-        exec "\"java\" -jar \"#{bridleJar}\" #{customArguments}", (error, stdout, stderr) ->
+        if os.platform() is 'win32'
+          customArguments.push("\"#{script}\"")
+        else
+          customArguments.push(script)
+
+        bridleCmd = defaultArguments.concat(customArguments)
+
+        exec bridleCmd.join(" "), (error, stdout, stderr) ->
           if error isnt null
             # bridleJar error from stdout, not error!
             atom.notifications.addError("**#{script}**", detail: error, dismissable: true)
