@@ -1,8 +1,14 @@
 meta = require '../package.json'
 
 # Dependencies
-{spawn} = require 'child_process'
+{exec} = require 'child_process'
 os = require 'os'
+
+# Set platform defaults
+if os.platform() is 'win32'
+  which  = "where"
+else
+  which  = "which"
 
 module.exports = BridlensisCore =
   config:
@@ -46,47 +52,44 @@ module.exports = BridlensisCore =
     if script? and scope.startsWith 'source.nsis.bridle'
       editor.save()
 
-      @getPath (stdout) ->
+      @getPath (javaBin) ->
         bridleJar  = atom.config.get('language-bridlensis.pathToJar')
-        
+
         if not bridleJar
           atom.notifications.addError("**#{meta.name}**: no valid `BridleNSIS.jar` specified in your config", dismissable: false)
           return
 
-        defaultArguments = ["-jar", bridleJar]
+        defaultArguments = ["java", "-jar", "\"#{bridleJar}\""]
         customArguments = atom.config.get('language-bridlensis.customArguments').trim().split(" ")
+        customArguments.push("\"#{script}\"")
 
-        if os.platform() is 'win32'
-          customArguments.push("\"#{script}\"")
-        else
-          customArguments.push(script)
+        bridleCmd = defaultArguments.concat(customArguments).join(" ")
+        
+        exec bridleCmd, (error, stdout, stderr) ->
+          if error or stderr
+            if error
+              atom.notifications.addError("Transpile failed", detail: error, dismissable: true)
 
-        args = defaultArguments.concat(customArguments)
-        bridleCmd = spawn('java', args)
+            if stderr
+              atom.notifications.addError("Transpile failed", detail: stderr, dismissable: true)
 
-        bridleCmd.stderr.on 'data', (data) ->
-          atom.notifications.addError("Transpiling failed", detail: data, dismissable: true)
-          return
+            return
 
-        bridleCmd.stdout.on 'data', (data) ->
-          atom.notifications.addSuccess("Transpiled successfully", detail: data, dismissable: false)
-          return
-
+          atom.notifications.addSuccess("Transpiled successfully", dismissable: false)
     else
       # Something went wrong
       atom.beep()
 
   getPath: (callback) ->
     if os.platform() is 'win32'
-      whichCmd = spawn('where', ['java'])
+      whichJava  = "where java"
     else
-      whichCmd = spawn('which', ['java'])
+      whichJava  = "which java"
 
     # Find Java
-    whichCmd.stderr.on 'data', (data) ->
-      atom.notifications.addError("**#{meta.name}**: Java is not in your `PATH` [environmental variable](http://superuser.com/a/284351/195953)", dismissable: true)
-      return
-
-    whichCmd.stdout.on 'data', (data) ->
-      callback data
+    exec whichJava, (error, stdout, stderr) ->
+      if error isnt null
+        atom.notifications.addError("**#{meta.name}**: Java is not in your `PATH` [environmental variable](http://superuser.com/a/284351/195953)", dismissable: true)
+      else
+        callback stdout
       return
