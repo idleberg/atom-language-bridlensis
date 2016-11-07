@@ -1,13 +1,6 @@
 # Dependencies
-{exec} = require 'child_process'
+{spawn} = require 'child_process'
 os = require 'os'
-
-# Set platform defaults
-if os.platform() is 'win32'
-  which  = "where"
-else
-  which  = "which"
-
 module.exports = BridlensisCore =
   config:
     pathToJar:
@@ -57,7 +50,7 @@ module.exports = BridlensisCore =
           atom.notifications.addError("**language-bridlensis**: no valid `BridleNSIS.jar` specified in your config", dismissable: false)
           return
 
-        defaultArguments = ["java", "-jar", nslJar]
+        defaultArguments = ["-jar", bridleJar]
         customArguments = atom.config.get('language-bridlensis.customArguments').trim().split(" ")
 
         if os.platform() is 'win32'
@@ -65,24 +58,32 @@ module.exports = BridlensisCore =
         else
           customArguments.push(script)
 
-        bridleCmd = defaultArguments.concat(customArguments)
+        args = defaultArguments.concat(customArguments)
+        bridleCmd = spawn('java', args);
 
-        exec bridleCmd.join(" "), (error, stdout, stderr) ->
-          if error isnt null
-            # bridleJar error from stdout, not error!
-            atom.notifications.addError("**#{script}**", detail: error, dismissable: true)
-          else
-            atom.notifications.addSuccess("Compiled successfully", detail: stdout, dismissable: false)
+        bridleCmd.stderr.on 'data', (data) ->
+          atom.notifications.addError("Compilation error", detail: data, dismissable: true)
+          return
+
+        bridleCmd.stdout.on 'data', (data) ->
+          atom.notifications.addSuccess("Compiled successfully", detail: data, dismissable: false)
+          return
+
     else
       # Something went wrong
       atom.beep()
 
   getPath: (callback) ->
+    if os.platform() is 'win32'
+      whichJava = spawn('where', ['java']);
+    else
+      whichJava = spawn('which', ['java']);
 
     # Find Java
-    exec "\"#{which}\" java", (error, stdout, stderr) ->
-      if error isnt null
-        atom.notifications.addError("**language-bridlensis**: Java is not in your `PATH` [environmental variable](http://superuser.com/a/284351/195953)", dismissable: true)
-      else
-        callback stdout
+    whichJava.stderr.on 'data', (data) ->
+      atom.notifications.addError("**language-bridlensis**: Java is not in your `PATH` [environmental variable](http://superuser.com/a/284351/195953)", dismissable: true)
+      return
+
+    whichJava.stdout.on 'data', (data) ->
+      callback data
       return
