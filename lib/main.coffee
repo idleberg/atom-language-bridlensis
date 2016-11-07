@@ -1,6 +1,9 @@
+meta = require '../package.json'
+
 # Dependencies
 {spawn} = require 'child_process'
 os = require 'os'
+
 module.exports = BridlensisCore =
   config:
     pathToJar:
@@ -34,7 +37,7 @@ module.exports = BridlensisCore =
     editor = atom.workspace.getActiveTextEditor()
 
     unless editor?
-      atom.notifications.addWarning("**language-bridlensis**: No active editor", dismissable: false)
+      atom.notifications.addWarning("**#{meta.name}**: No active editor", dismissable: false)
       return
 
     script = editor.getPath()
@@ -47,7 +50,7 @@ module.exports = BridlensisCore =
         bridleJar  = atom.config.get('language-bridlensis.pathToJar')
         
         if not bridleJar
-          atom.notifications.addError("**language-bridlensis**: no valid `BridleNSIS.jar` specified in your config", dismissable: false)
+          atom.notifications.addError("**#{meta.name}**: no valid `BridleNSIS.jar` specified in your config", dismissable: false)
           return
 
         defaultArguments = ["-jar", bridleJar]
@@ -75,15 +78,15 @@ module.exports = BridlensisCore =
 
   getPath: (callback) ->
     if os.platform() is 'win32'
-      whichJava = spawn('where', ['java'])
+      whichCmd = spawn('where', ['java'])
     else
-      whichJava = spawn('which', ['java'])
+      whichCmd = spawn('which', ['java'])
 
     # Find Java
-    whichJava.stderr.on 'data', (data) ->
-      atom.notifications.addError("**language-bridlensis**: Java is not in your `PATH` [environmental variable](http://superuser.com/a/284351/195953)", dismissable: true)
+    whichCmd.stderr.on 'data', (data) ->
+      atom.notifications.addError("**#{meta.name}**: Java is not in your `PATH` [environmental variable](http://superuser.com/a/284351/195953)", dismissable: true)
       return
 
-    whichJava.stdout.on 'data', (data) ->
+    whichCmd.stdout.on 'data', (data) ->
       callback data
       return
