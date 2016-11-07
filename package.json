@@ -17,7 +17,7 @@
   "main": "lib/main.coffee",
   "activationCommands": {
     "atom-workspace": [
-      "BridleNSIS:save-&-compile"
+      "BridleNSIS:save-&-transpile"
     ]
   },
   "engines": {

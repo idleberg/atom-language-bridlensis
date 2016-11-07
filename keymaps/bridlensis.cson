@@ -1,6 +1,6 @@
 # https://atom.io/docs/latest/advanced/keymaps
 '.platform-darwin atom-text-editor, .platform-linux atom-text-editor':
-  'cmd-alt-j': 'BridleNSIS:save-&-compile'
+  'cmd-alt-j': 'BridleNSIS:save-&-transpile'
 
 '.platform-win32 atom-text-editor':
-  'shift-alt-j': 'BridleNSIS:save-&-compile'
+  'shift-alt-j': 'BridleNSIS:save-&-transpile'
