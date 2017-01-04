@@ -1,7 +1,7 @@
 meta = require '../package.json'
 
 # Dependencies
-{exec} = require 'child_process'
+{spawn} = require 'child_process'
 os = require 'os'
 
 # Set platform defaults
@@ -24,6 +24,36 @@ module.exports = BridlensisCore =
       type: "string"
       default: ""
       order: 1
+    nsisHome:
+      title: "NSIS Home"
+      description: "NSIS home directory (tried to detect automatically if not specified)"
+      type: "string"
+      default: ""
+      order: 2
+    alwaysShowOutput:
+      title: "Always Show Output"
+      description: "Displays compiler output in console panel. When deactivated, it will only show on errors"
+      type: "boolean"
+      default: true
+      order: 3
+    showBuildNotifications:
+      title: "Show Build Notifications"
+      description: "Displays color-coded notifications that close automatically after 5 seconds"
+      type: "boolean"
+      default: true
+      order: 4
+    clearConsole:
+      title: "Clear Console"
+      description: "When `console-panel` isn't available, build logs will be printed using `console.log()`. This setting clears the console prior to building."
+      type: "boolean"
+      default: true
+      order: 5
+    manageDependencies:
+      title: "Manage Dependencies"
+      description: "When enabled, this will automatically install third-party dependencies"
+      type: "boolean"
+      default: true
+      order: 6
   subscriptions: null
 
   activate: (state) ->
@@ -33,13 +63,26 @@ module.exports = BridlensisCore =
     @subscriptions = new CompositeDisposable
 
     # Register commands
-    @subscriptions.add atom.commands.add 'atom-workspace', 'BridleNSIS:save-&-transpile': => @buildScript()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'BridleNSIS:save-&-transpile': => @buildScript(@consolePanel)
+
+    if atom.config.get('language-bridlensis.manageDependencies')
+      @satisfyDependencies()
 
   deactivate: ->
     @subscriptions?.dispose()
     @subscriptions = null
 
-  buildScript: ->
+  satisfyDependencies: () ->
+    require('atom-package-deps').install(meta.name)
+
+    for k, v of meta["package-deps"]
+      if atom.packages.isPackageDisabled(v)
+        console.log "Enabling package '#{v}'" if atom.inDevMode()
+        atom.packages.enablePackage(v)
+
+  consumeConsolePanel: (@consolePanel) ->
+
+  buildScript: (consolePanel) ->
     editor = atom.workspace.getActiveTextEditor()
 
     unless editor?
@@ -52,44 +95,49 @@ module.exports = BridlensisCore =
     if script? and scope.startsWith 'source.nsis.bridle'
       editor.save()
 
-      @getPath (javaBin) ->
-        bridleJar = atom.config.get('language-bridlensis.pathToJar')
+      bridleJar = atom.config.get('language-bridlensis.pathToJar')
 
-        if not bridleJar
-          atom.notifications.addError("**#{meta.name}**: no valid `BridleNSIS.jar` specified in your config", dismissable: false)
-          return
+      if not bridleJar
+        atom.notifications.addError("**#{meta.name}**: no valid `BridleNSIS.jar` specified in your config", dismissable: false)
+        return
 
-        defaultArguments = ["java", "-jar", "\"#{bridleJar}\""]
-        customArguments = atom.config.get('language-bridlensis.customArguments').trim().split(" ")
-        customArguments.push("\"#{script}\"")
+      defaultArguments = ["-jar", "#{nslJar}"]
+      customArguments = atom.config.get('language-bridlensis.customArguments').trim().split(" ")
 
-        bridleCmd = defaultArguments.concat(customArguments).join(" ")
-        
-        exec bridleCmd, (error, stdout, stderr) ->
-          if error or stderr
-            if error
-              atom.notifications.addError("Transpile failed", detail: error, dismissable: true)
+      if atom.config.get('language-bridlensis.nsisHome') and compilerArguments.indexOf(prefix + '-n') == -1
+        customArguments.push("-n")
+        customArguments.push(atom.config.get('language-bridlensis.nsisHome'))
 
-            if stderr
-              atom.notifications.addError("Transpile failed", detail: stderr, dismissable: true)
+      customArguments.push(script)
+      args = defaultArguments.concat(customArguments)
 
-            return
+      try
+        consolePanel.clear()
+      catch
+        console.clear() if atom.config.get('language-bridlensis.clearConsole')
 
-          atom.notifications.addSuccess("Transpiled successfully", dismissable: false)
+      # Let's go
+      bridleCmd = spawn "java", args
+      hasError = false
+
+      bridleCmd.stdout.on 'data', (data) ->
+        try
+          consolePanel.log(data.toString()) if atom.config.get('language-bridlensis.alwaysShowOutput')
+        catch
+          console.log(data.toString())
+
+        bridleCmd.stderr.on 'data', (data) ->
+          hasError = true
+          try
+            consolePanel.error(data.toString()) if atom.config.get('language-bridlensis.alwaysShowOutput')
+          catch
+            console.error(data.toString())
+
+        bridleCmd.on 'close', ( errorCode ) ->
+          if errorCode is 0 and hasError is false
+            return atom.notifications.addSuccess("Transpiled successfully", dismissable: false) if atom.config.get('language-bridlensis.showBuildNotifications')
+
+          return atom.notifications.addError("Transpile failed", dismissable: false) if atom.config.get('language-bridlensis.showBuildNotifications')
     else
       # Something went wrong
       atom.beep()
-
-  getPath: (callback) ->
-    if os.platform() is 'win32'
-      whichJava  = "where java"
-    else
-      whichJava  = "which java"
-
-    # Find Java
-    exec whichJava, (error, stdout, stderr) ->
-      if error isnt null
-        atom.notifications.addError("**#{meta.name}**: Java is not in your `PATH` [environmental variable](http://superuser.com/a/284351/195953)", dismissable: true)
-      else
-        callback stdout
-      return
