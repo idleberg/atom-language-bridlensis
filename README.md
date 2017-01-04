@@ -33,6 +33,10 @@ Clone repository as `language-bridlensis`:
 $ git clone https://github.com/idleberg/atom-language-bridlensis language-bridlensis
 ```
 
+### Package Dependencies
+
+This package automatically installs third-party packages it depends on. You can prevent this by disabling the *Manage Dependencies* option in the package settings.
+
 ## Usage
 
 To avoid interference with vanilla NSIS, consider using the file-extensions `.bridle-nsis` and `.bridle-nsh`. Alternatively, you can set the syntax to *“BridleNSIS”* (`source.nsis.bridle`) manually.
