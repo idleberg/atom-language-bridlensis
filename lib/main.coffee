@@ -86,7 +86,7 @@ module.exports = BridlensisCore =
     scope  = editor.getGrammar().scopeName
 
     if script? and scope.startsWith 'source.nsis.bridle'
-      editor.save()
+      editor.save() if editor.isModified()
 
       bridleJar = atom.config.get('language-bridlensis.pathToJar')
 
@@ -95,9 +95,13 @@ module.exports = BridlensisCore =
         return
 
       defaultArguments = ["-jar", bridleJar]
-      customArguments = atom.config.get('language-bridlensis.customArguments').trim().split(" ")
 
-      if atom.config.get('language-bridlensis.nsisHome') and compilerArguments.indexOf('-n') == -1
+      if atom.config.get('language-bridlensis.customArguments').length > 0
+        customArguments = atom.config.get('language-bridlensis.customArguments').trim().split(" ")
+      else
+        customArguments = []
+
+      if atom.config.get('language-bridlensis.nsisHome').length > 0 and customArguments.indexOf('-n') == -1
         customArguments.push("-n")
         customArguments.push(atom.config.get('language-bridlensis.nsisHome'))
 
@@ -119,18 +123,18 @@ module.exports = BridlensisCore =
         catch
           console.log(data.toString())
 
-        bridleCmd.stderr.on 'data', (data) ->
-          hasError = true
-          try
-            consolePanel.error(data.toString()) if atom.config.get('language-bridlensis.alwaysShowOutput')
-          catch
-            console.error(data.toString())
+      bridleCmd.stderr.on 'data', (data) ->
+        hasError = true
+        try
+          consolePanel.error(data.toString()) if atom.config.get('language-bridlensis.alwaysShowOutput')
+        catch
+          console.error(data.toString())
 
-        bridleCmd.on 'close', ( errorCode ) ->
-          if errorCode is 0 and hasError is false
-            return atom.notifications.addSuccess("Transpiled successfully", dismissable: false) if atom.config.get('language-bridlensis.showBuildNotifications')
+      bridleCmd.on 'close', ( errorCode ) ->
+        if errorCode is 0 and hasError is false
+          return atom.notifications.addSuccess("Transpiled successfully", dismissable: false) if atom.config.get('language-bridlensis.showBuildNotifications')
 
-          return atom.notifications.addError("Transpile failed", dismissable: false) if atom.config.get('language-bridlensis.showBuildNotifications')
+        return atom.notifications.addError("Transpile failed", dismissable: false) if atom.config.get('language-bridlensis.showBuildNotifications')
     else
       # Something went wrong
       atom.beep()
