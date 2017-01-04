@@ -2,13 +2,6 @@ meta = require '../package.json'
 
 # Dependencies
 {spawn} = require 'child_process'
-os = require 'os'
-
-# Set platform defaults
-if os.platform() is 'win32'
-  which  = "where"
-else
-  which  = "which"
 
 module.exports = BridlensisCore =
   config:
@@ -20,7 +13,7 @@ module.exports = BridlensisCore =
       order: 0
     customArguments:
       title: "Custom Arguments"
-      description: "Specify your preferred arguments for BridleNSIS"
+      description: "Specify your preferred [arguments](https://github.com/henrikor2/bridlensis/blob/master/src/main/resources/bridlensis/USAGE) for BridleNSIS"
       type: "string"
       default: ""
       order: 1
@@ -101,10 +94,10 @@ module.exports = BridlensisCore =
         atom.notifications.addError("**#{meta.name}**: no valid `BridleNSIS.jar` specified in your config", dismissable: false)
         return
 
-      defaultArguments = ["-jar", "#{nslJar}"]
+      defaultArguments = ["-jar", bridleJar]
       customArguments = atom.config.get('language-bridlensis.customArguments').trim().split(" ")
 
-      if atom.config.get('language-bridlensis.nsisHome') and compilerArguments.indexOf(prefix + '-n') == -1
+      if atom.config.get('language-bridlensis.nsisHome') and compilerArguments.indexOf('-n') == -1
         customArguments.push("-n")
         customArguments.push(atom.config.get('language-bridlensis.nsisHome'))
 

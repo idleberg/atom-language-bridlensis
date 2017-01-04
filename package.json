@@ -16,11 +16,6 @@
   ],
   "repository": "https://github.com/idleberg/atom-language-bridlensis",
   "main": "lib/main.coffee",
-  "activationCommands": {
-    "atom-workspace": [
-      "BridleNSIS:save-&-transpile"
-    ]
-  },
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
