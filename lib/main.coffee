@@ -126,7 +126,7 @@ module.exports = BridlensisCore =
       bridleCmd.stderr.on 'data', (data) ->
         hasError = true
         try
-          consolePanel.error(data.toString()) if atom.config.get('language-bridlensis.alwaysShowOutput')
+          consolePanel.error(data.toString())
         catch
           console.error(data.toString())
 
