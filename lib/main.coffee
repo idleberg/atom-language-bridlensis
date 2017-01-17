@@ -91,16 +91,19 @@ module.exports = BridlensisCore =
       bridleJar = atom.config.get('language-bridlensis.pathToJar')
 
       if not bridleJar
-        return atom.notifications.addError(
-          "**#{meta.name}**: No valid `BridleNSIS.jar` was specified in your settings",
-          dismissable: true,
+        notification = atom.notifications.addError(
+          "**#{meta.name}**: No valid `BridleNSIS.jar` was specified in your settings"
+          dismissable: true
           buttons: [
             {
               text: 'Open Settings'
-              onDidClick: -> atom.workspace.open("atom://config/packages/#{meta.name}")
+              onDidClick: ->
+                atom.workspace.open("atom://config/packages/#{meta.name}")
+                notification.dismiss()
             }
           ]
         )
+        return
 
       defaultArguments = ["-jar", bridleJar]
 
