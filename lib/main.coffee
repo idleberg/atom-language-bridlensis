@@ -91,7 +91,7 @@ module.exports = BridlensisCore =
       bridleJar = atom.config.get('language-bridlensis.pathToJar')
 
       if not bridleJar
-        notification = atom.notifications.addError(
+        notification = atom.notifications.addWarning(
           "**#{meta.name}**: No valid `BridleNSIS.jar` was specified in your settings"
           dismissable: true
           buttons: [
