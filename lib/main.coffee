@@ -43,7 +43,7 @@ module.exports = BridlensisCore =
       order: 5
     manageDependencies:
       title: "Manage Dependencies"
-      description: "When enabled, this will automatically install third-party dependencies"
+      description: "When enabled, third-party dependencies will be installed automatically"
       type: "boolean"
       default: true
       order: 6
