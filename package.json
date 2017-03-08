@@ -1,6 +1,6 @@
 {
   "name": "language-bridlensis",
-  "version": "3.3.6",
+  "version": "3.4.0",
   "description": "Atom language support for BridleNSIS, including grammar, snippets and a rudimentary build system",
   "license": "MIT OR GPL-2.0",
   "author": {
