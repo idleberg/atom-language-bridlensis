@@ -1,7 +1,4 @@
-meta = require '../package.json'
-
-# Dependencies
-{spawn} = require 'child_process'
+meta = require "../package.json"
 
 module.exports = BridlensisCore =
   config:
@@ -50,7 +47,7 @@ module.exports = BridlensisCore =
   subscriptions: null
 
   activate: (state) ->
-    {CompositeDisposable} = require 'atom'
+    {CompositeDisposable} = require "atom"
 
     # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
     @subscriptions = new CompositeDisposable
@@ -66,7 +63,7 @@ module.exports = BridlensisCore =
     @subscriptions = null
 
   satisfyDependencies: () ->
-    require('atom-package-deps').install(meta.name)
+    require("atom-package-deps").install(meta.name)
 
     for k, v of meta["package-deps"]
       if atom.packages.isPackageDisabled(v)
@@ -76,6 +73,8 @@ module.exports = BridlensisCore =
   consumeConsolePanel: (@consolePanel) ->
 
   buildScript: (consolePanel) ->
+    {spawn} = require "child_process"
+
     editor = atom.workspace.getActiveTextEditor()
 
     unless editor?
