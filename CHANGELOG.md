@@ -1,3 +1,7 @@
+# v3.5.1 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v3.5.1)
+
+- remove trailing semicolons
+
 # v3.5.0 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v3.5.0)
 
 - add `mutePathWarning` option
