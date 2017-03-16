@@ -90,14 +90,14 @@ module.exports = BridlensisCore =
             {
               text: 'Open Settings'
               onDidClick: ->
-                atom.workspace.open("atom://config/packages/#{meta.name}");
-                notification.dismiss();
+                atom.workspace.open("atom://config/packages/#{meta.name}")
+                notification.dismiss()
             },
             {
               text: 'Ignore',
               onDidClick: ->
-                atom.config.set("#{meta.name}.mutePathWarning", true);
-                notification.dismiss();
+                atom.config.set("#{meta.name}.mutePathWarning", true)
+                notification.dismiss()
             }
           ]
         )
