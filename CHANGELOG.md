@@ -1,3 +1,8 @@
+# v3.6.1 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v3.6.1)
+
+- use real-world example in `README.md`
+- update dependencies
+
 # v3.6.0 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v3.6.0)
 
 - add HTML labels for snippets
