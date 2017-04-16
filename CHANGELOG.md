@@ -1,3 +1,7 @@
+# v3.6.0 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v3.6.0)
+
+- add HTML labels for snippets
+
 # v3.5.1 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v3.5.1)
 
 - remove trailing semicolons
