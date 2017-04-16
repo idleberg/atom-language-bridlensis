@@ -51,7 +51,7 @@ Make sure to specify the path for `BridleNSIS.jar` in your Atom [configuration](
 
 ```cson
 "language-bridlensis":
-  pathToJar: "%PROGRAMFILES%\\BridleNSIS\\BridleNSIS.jar"
+  pathToJar: "%PROGRAMFILES%\\BridleNSIS\\BridleNSIS-0.4.1.jar"
 ```
 
 #### Third-party packages
