@@ -1,516 +1,673 @@
 '.source.nsis.bridle':
   'Abort()':
-    'prefix': 'Abort()'
-    'body': 'Abort("${1:user_message}")$2'
+    body: 'Abort("${1:user_message}")$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'Abort()'
   'BringToFront()':
-    'prefix': 'BringToFront()'
-    'body': 'BringToFront()$1'
+    body: 'BringToFront()$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'BringToFront()'
   'Call()':
-    'prefix': 'Call()'
-    'body': 'Call("${1:name}")$2'
+    body: 'Call("${1:name}")$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'Call()'
   'CallInstDLL()':
-    'prefix': 'CallInstDLL()'
-    'body': 'CallInstDLL("${1:dll_file}", "${2:function_name}"'
+    body: 'CallInstDLL("${1:dll_file}", "${2:function_name}"'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'CallInstDLL()'
   'ClearErrors()':
-    'prefix': 'ClearErrors()'
-    'body': 'ClearErrors()$1'
+    body: 'ClearErrors()$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'ClearErrors()'
   'Copy()':
-    'prefix': 'Copy()'
-    'body': 'Copy("${1:file}", "${2:target}")$3'
+    body: 'Copy("${1:file}", "${2:target}")$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'Copy()'
   'CreateDirectory()':
-    'prefix': 'CreateDirectory()'
-    'body': 'CreateDirectory("${1:path_to_create}")$3'
+    body: 'CreateDirectory("${1:path_to_create}")$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'CreateDirectory()'
   'CreateFont()':
-    'prefix': 'CreateFont()'
-    'body': 'CreateFont("${1:face_name}",${2: "${3:height}"${4:, "${5:weight}"${6:, ${7:/ITALIC}${8:, ${9:/UNDERLINE}${10:, ${11:/STRIKE}}}}}})$12'
+    body: 'CreateFont("${1:face_name}",${2: "${3:height}"${4:, "${5:weight}"${6:, ${7:/ITALIC}${8:, ${9:/UNDERLINE}${10:, ${11:/STRIKE}}}}}})$12'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'CreateFont()'
   'CreateShortCut()':
-    'prefix': 'CreateShortCut()'
-    'body': 'CreateShortCut("${1:link}.lnk", "${2:target_file}"${3:, "${4:parameters}"${5:, "${6:icon_file}"${7:, ${8:icon_index_number}${9:, ${10:start_options}${11:, ${12:keyboard_shortcut}${13:, "${14:description}"}}}}}}})$15'
+    body: 'CreateShortCut("${1:link}.lnk", "${2:target_file}"${3:, "${4:parameters}"${5:, "${6:icon_file}"${7:, ${8:icon_index_number}${9:, ${10:start_options}${11:, ${12:keyboard_shortcut}${13:, "${14:description}"}}}}}}})$15'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'CreateShortCut()'
   'Delete()':
-    'prefix': 'Delete()'
-    'body': 'Delete("${1:source}"${2:, "${3:rebootok}"})$4'
+    body: 'Delete("${1:source}"${2:, "${3:rebootok}"})$4'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'Delete()'
   'DeleteINISec()':
-    'prefix': 'DeleteINISec()'
-    'body': 'DeleteINISec("${1:ini_filename}", "${2:section_name}")$4'
+    body: 'DeleteINISec("${1:ini_filename}", "${2:section_name}")$4'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'DeleteINISec()'
   'DeleteINIStr()':
-    'prefix': 'DeleteINIStr()'
-    'body': 'DeleteINIStr("${1:ini_filename}", "${2:section_name}", "${3:str_name}")$4'
+    body: 'DeleteINIStr("${1:ini_filename}", "${2:section_name}", "${3:str_name}")$4'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'DeleteINIStr()'
   'DeleteRegKey()':
-    'prefix': 'DeleteRegKey()'
-    'body': 'DeleteRegKey("${1:rootkey}", "${2:subkey}"}${3:, "${4:options}"})$5'
+    body: 'DeleteRegKey("${1:rootkey}", "${2:subkey}"}${3:, "${4:options}"})$5'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'DeleteRegKey()'
   'DeleteRegValue()':
-    'prefix': 'DeleteRegValue()'
-    'body': 'DeleteRegValue("${1:root_key}", "${2:subkey}", "${3:key_name}")$4'
+    body: 'DeleteRegValue("${1:root_key}", "${2:subkey}", "${3:key_name}")$4'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'DeleteRegValue()'
   'DetailPrint()':
-    'prefix': 'DetailPrint()'
-    'body': 'DetailPrint("${1:user_message}")$2'
-  'Do Until..Loop':
-    'prefix': 'Do Until..Loop'
-    'body': """
+    body: 'DetailPrint("${1:user_message}")$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'DetailPrint()'
+  'Do Until…Loop':
+    body: """
       Do Until ${1:condition}
       \t${4:# your code here}
       Loop$5
     """
-  'Do While..Loop':
-    'prefix': 'Do While..Loop'
-    'body': """
+    leftLabelHTML: "<span class='syntax--support function'>LogicLib.nsh</span>"
+    prefix: 'Do Until…Loop'
+  'Do While…Loop':
+    body: """
       Do While ${1:condition}
       \t${4:# your code here}
       Loop$5
     """
+    leftLabelHTML: "<span class='syntax--support function'>LogicLib.nsh</span>"
+    prefix: 'Do While…Loop'
   'EnableWindow()':
-    'prefix': 'EnableWindow()'
-    'body': 'EnableWindow(${1:hwnd}, ${2:value})$3'
+    body: 'EnableWindow(${1:hwnd}, ${2:value})$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'EnableWindow()'
   'EnumRegKey()':
-    'prefix': 'EnumRegKey()'
-    'body': 'EnumRegKey("${1:root_key}", "${2:subkey}", "${3:index}")$4'
+    body: 'EnumRegKey("${1:root_key}", "${2:subkey}", "${3:index}")$4'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'EnumRegKey()'
   'EnumRegValue()':
-    'prefix': 'EnumRegValue()'
-    'body': 'EnumRegValue("${1:root_key}", "${2:subkey}", "${3:index}")$4'
+    body: 'EnumRegValue("${1:root_key}", "${2:subkey}", "${3:index}")$4'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'EnumRegValue()'
   'Exch()':
-    'prefix': 'Exch()'
-    'body': 'Exch(${1:user_var})$2'
+    body: 'Exch(${1:user_var})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'Exch()'
   'Exec()':
-    'prefix': 'Exec()'
-    'body': 'Exec("${1:command}")$2'
+    body: 'Exec("${1:command}")$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'Exec()'
   'ExecShell()':
-    'prefix': 'ExecShell()'
-    'body': 'ExecShell("${1:action}", "${2:command}"${3:, ${4:parameter}})$5'
+    body: 'ExecShell("${1:action}", "${2:command}"${3:, ${4:parameter}})$5'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'ExecShell()'
   'ExecWait()':
-    'prefix': 'ExecWait()'
-    'body': 'ExecWait("${1:command}")$2'
+    body: 'ExecWait("${1:command}")$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'ExecWait()'
   'ExpandEnvStrings()':
-    'prefix': 'ExpandEnvStrings()'
-    'body': 'ExpandEnvStrings("${1:string}")$2'
+    body: 'ExpandEnvStrings("${1:string}")$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'ExpandEnvStrings()'
   'File()':
-    'prefix': 'File()'
-    'body': 'File("${1:file}"${2:, "${3:options}"${4:, "${5:outpath}"}})$6'
+    body: 'File("${1:file}"${2:, "${3:options}"${4:, "${5:outpath}"}})$6'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'File()'
   'FileClose()':
-    'prefix': 'FileClose()'
-    'body': 'FileClose(${1:handle})$2'
+    body: 'FileClose(${1:handle})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FileClose()'
   'FileCopy()':
-    'prefix': 'FileCopy()'
-    'body': 'FileCopy("${1:file}", "${2:target}")$3'
+    body: 'FileCopy("${1:file}", "${2:target}")$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FileCopy()'
   'FileDelete()':
-    'prefix': 'FileDelete()'
-    'body': 'FileDelete("${1:source}"${2:, "${3:rebootok}"})$4'
+    body: 'FileDelete("${1:source}"${2:, "${3:rebootok}"})$4'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FileDelete()'
   'FileOpen()':
-    'prefix': 'FileOpen()'
-    'body': 'FileOpen("${1:filename}", ${2:open_mode})$3'
+    body: 'FileOpen("${1:filename}", ${2:open_mode})$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FileOpen()'
   'FileRead()':
-    'prefix': 'FileRead()'
-    'body': 'FileRead(${1:handle}, ${2:maxlen})$3'
+    body: 'FileRead(${1:handle}, ${2:maxlen})$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FileRead()'
   'FileReadByte()':
-    'prefix': 'FileReadByte()'
-    'body': 'FileReadByte(${1:handle}, ${2:maxlen})$3'
+    body: 'FileReadByte(${1:handle}, ${2:maxlen})$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FileReadByte()'
   'FileReadUTF16LE()':
-    'prefix': 'FileReadUTF16LE()'
-    'body': 'FileReadUTF16LE(${1:handle}, ${2:maxlen})$3'
+    body: 'FileReadUTF16LE(${1:handle}, ${2:maxlen})$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FileReadUTF16LE()'
   'FileReadWord()':
-    'prefix': 'FileReadWord()'
-    'body': 'FileReadWord(${1:handle}, ${2:maxlen})$3'
+    body: 'FileReadWord(${1:handle}, ${2:maxlen})$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FileReadWord()'
   'FileRename()':
-    'prefix': 'FileRename()'
-    'body': 'FileRename("${1:source}", "${2:target}"${3:, "${4:options}"}})$5'
+    body: 'FileRename("${1:source}", "${2:target}"${3:, "${4:options}"}})$5'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FileRename()'
   'FileSeek()':
-    'prefix': 'FileSeek()'
-    'body': 'FileSeek(${1:handle}, ${2:offset}${3:, ${4:mode}${5:, ${6:user_var}}})$7'
+    body: 'FileSeek(${1:handle}, ${2:offset}${3:, ${4:mode}${5:, ${6:user_var}}})$7'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FileSeek()'
   'FileWrite()':
-    'prefix': 'FileWrite()'
-    'body': 'FileWrite(${1:handle})$2'
+    body: 'FileWrite(${1:handle})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FileWrite()'
   'FileWriteByte()':
-    'prefix': 'FileWriteByte()'
-    'body': 'FileWriteByte(${1:handle}, "${2:string}")$3'
+    body: 'FileWriteByte(${1:handle}, "${2:string}")$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FileWriteByte()'
   'FileWriteUTF16LE()':
-    'prefix': 'FileWriteUTF16LE()'
-    'body': 'FileWriteUTF16LE(${1:handle}, "${2:string}")$3'
+    body: 'FileWriteUTF16LE(${1:handle}, "${2:string}")$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FileWriteUTF16LE()'
   'FileWriteWord()':
-    'prefix': 'FileWriteWord()'
-    'body': 'FileWriteWord(${1:handle}, "${2:string}")$3'
+    body: 'FileWriteWord(${1:handle}, "${2:string}")$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FileWriteWord()'
   'FindClose()':
-    'prefix': 'FindClose()'
-    'body': 'FindClose(${1:handle})$2'
+    body: 'FindClose(${1:handle})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FindClose()'
   'FindNext()':
-    'prefix': 'FindNext()'
-    'body': 'FindNext(${1:handle})$2'
+    body: 'FindNext(${1:handle})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FindNext()'
   'FindWindow()':
-    'prefix': 'FindWindow()'
-    'body': 'FindWindow("${1:windowclass}", "${2:windowtitle}"${3:, ${4:windowparent}${5:, ${6:childafter}}})$7'
+    body: 'FindWindow("${1:windowclass}", "${2:windowtitle}"${3:, ${4:windowparent}${5:, ${6:childafter}}})$7'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FindWindow()'
   'FlushINI()':
-    'prefix': 'FlushINI()'
-    'body': 'FlushINI("${1:ini_filename}")$2'
+    body: 'FlushINI("${1:ini_filename}")$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'FlushINI()'
   'Function()':
-    'prefix': 'Function()'
-    'body': """
+    body: """
       Function ${1:function_name}(${2:parameters})
       \t${5:# your code here}
       FunctionEnd$6
     """
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'Function()'
   'GetCurInstType()':
-    'prefix': 'GetCurInstType()'
-    'body': 'GetCurInstType()$1'
+    body: 'GetCurInstType()$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'GetCurInstType()'
   'GetCurrentAddress()':
-    'prefix': 'GetCurrentAddress()'
-    'body': 'GetCurrentAddress()$1'
+    body: 'GetCurrentAddress()$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'GetCurrentAddress()'
   'GetDlgItem()':
-    'prefix': 'GetDlgItem()'
-    'body': 'GetDlgItem(${1:dialog}, ${2:item_id})$3'
+    body: 'GetDlgItem(${1:dialog}, ${2:item_id})$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'GetDlgItem()'
   'GetErrorLevel()':
-    'prefix': 'GetErrorLevel()'
-    'body': 'GetErrorLevel()$1'
+    body: 'GetErrorLevel()$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'GetErrorLevel()'
   'GetFullPathName()':
-    'prefix': 'GetFullPathName()'
-    'body': 'GetFullPathName("${1:path}"${2:, "${3:options}"})$4'
+    body: 'GetFullPathName("${1:path}"${2:, "${3:options}"})$4'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'GetFullPathName()'
   'GetFunctionAddress()':
-    'prefix': 'GetFunctionAddress()'
-    'body': 'GetCurrentAddress("${1:function_name}")$2'
+    body: 'GetCurrentAddress("${1:function_name}")$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'GetFunctionAddress()'
   'GetInstDirError()':
-    'prefix': 'GetInstDirError()'
-    'body': 'GetInstDirError()$1'
+    body: 'GetInstDirError()$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'GetInstDirError()'
   'GetLabelAddress()':
-    'prefix': 'GetLabelAddress()'
-    'body': 'GetLabelAddress("${1:label}")$2'
+    body: 'GetLabelAddress("${1:label}")$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'GetLabelAddress()'
   'GetTempFileName()':
-    'prefix': 'GetTempFileName()'
-    'body': 'GetTempFileName(${1:\$${2:base_dir}})$3'
+    body: 'GetTempFileName(${1:\$${2:base_dir}})$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'GetTempFileName()'
   'Goto()':
-    'prefix': 'Goto()'
-    'body': 'Goto(${1:name})$2'
+    body: 'Goto(${1:name})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'Goto()'
   'HideWindow()':
-    'prefix': 'HideWindow()'
-    'body': 'HideWindow()$1'
+    body: 'HideWindow()$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'HideWindow()'
   'If Not':
-    'prefix': 'If Not'
-    'body': """
+    body: """
       If Not ${1:condition}
       \t${4:# your code here}
       EndIf$5
     """
-  'If Not..Else':
-    'prefix': 'If Not..Else'
-    'body': """
+    leftLabelHTML: "<span class='syntax--support function'>LogicLib.nsh</span>"
+    prefix: 'If Not'
+  'If Not…Else':
+    body: """
       If Not ${1:condition}
       \t${4:# your code here}
       Else
       \t${5:# your code here}
       EndIf$6
     """
-  'If Not..ElseIf':
-    'prefix': 'If Not..ElseIf'
-    'body': """
+    leftLabelHTML: "<span class='syntax--support function'>LogicLib.nsh</span>"
+    prefix: 'If Not…Else'
+  'If Not…ElseIf':
+    body: """
       If Not ${1:condition}
       \t${4:# your code here}
       ElseIf
       \t${5:# your code here}
       EndIf$6
     """
+    leftLabelHTML: "<span class='syntax--support function'>LogicLib.nsh</span>"
+    prefix: 'If Not…ElseIf'
   'If':
-    'prefix': 'If'
-    'body': """
+    body: """
       If ${1:condition}
       \t${4:# your code here}
       EndIf$5
     """
-  'If..Else':
-    'prefix': 'If..Else'
-    'body': """
+    leftLabelHTML: "<span class='syntax--support function'>LogicLib.nsh</span>"
+    prefix: 'If'
+  'If…Else':
+    body: """
       If ${1:condition}
       \t${4:# your code here}
       Else
       \t${5:# your code here}
       EndIf$6
     """
-  'If..ElseIf':
-    'prefix': 'If..ElseIf'
-    'body': """
+    leftLabelHTML: "<span class='syntax--support function'>LogicLib.nsh</span>"
+    prefix: 'If…Else'
+  'If…ElseIf':
+    body: """
       If ${1:condition}
       \t${4:# your code here}
       ElseIf
       \t${5:# your code here}
       EndIf$6
     """
+    leftLabelHTML: "<span class='syntax--support function'>LogicLib.nsh</span>"
+    prefix: 'If…ElseIf'
   'InitPluginsDir()':
-    'prefix': 'InitPluginsDir()'
-    'body': 'InitPluginsDir()$1'
+    body: 'InitPluginsDir()$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'InitPluginsDir()'
   'InstTypeGetText()':
-    'prefix': 'InstTypeGetText()'
-    'body': 'InstTypeGetText(${1:inst_type_idx})$2'
+    body: 'InstTypeGetText(${1:inst_type_idx})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'InstTypeGetText()'
   'InstTypeSetText()':
-    'prefix': 'InstTypeSetText()'
-    'body': 'InstTypeSetText(${1:inst_type_idx}, "${2:text}")$3'
+    body: 'InstTypeSetText(${1:inst_type_idx}, "${2:text}")$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'InstTypeSetText()'
   'IntCmp()':
-    'prefix': 'IntCmp()'
-    'body': 'IntCmp(${1:val1}, ${2:val2}, ${3:jump_if_equal}${4:, ${5:jump_if_val1_less}${6:, ${7:jump_if_val1_more}}})$8'
+    body: 'IntCmp(${1:val1}, ${2:val2}, ${3:jump_if_equal}${4:, ${5:jump_if_val1_less}${6:, ${7:jump_if_val1_more}}})$8'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'IntCmp()'
   'IntFmt()':
-    'prefix': 'IntFmt()'
-    'body': 'IntFmt(${1:format}, ${2:numberstring})$3'
+    body: 'IntFmt(${1:format}, ${2:numberstring})$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'IntFmt()'
   'IntOp()':
-    'prefix': 'IntOp()'
-    'body': 'IntOp(${1:value1}, ${2:op}, ${3:value2})$4'
+    body: 'IntOp(${1:value1}, ${2:op}, ${3:value2})$4'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'IntOp()'
   'LangString()':
-    'prefix': 'LangString()'
-    'body': 'LangString(${1:name}, \$\{LANG_${2:language_id}\}, "${3:string}")$4'
+    body: 'LangString(${1:name}, \$\{LANG_${2:language_id}\}, "${3:string}")$4'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'LangString()'
   'LicenseLangString()':
-    'prefix': 'LicenseLangString()'
-    'body': 'LicenseLangString(${1:name}, \$\{LANG_${2:language_id}\}, "${3:license_path}")$4'
+    body: 'LicenseLangString(${1:name}, \$\{LANG_${2:language_id}\}, "${3:license_path}")$4'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'LicenseLangString()'
   'LoadLanguageFile()':
-    'prefix': 'LoadLanguageFile()'
-    'body': 'LoadLanguageFile("${1:language_file_nlf}")$2'
+    body: 'LoadLanguageFile("${1:language_file_nlf}")$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'LoadLanguageFile()'
   'LockWindow()':
-    'prefix': 'LockWindow()'
-    'body': 'LockWindow(${1:value})$2'
+    body: 'LockWindow(${1:value})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'LockWindow()'
   'LockWindow(off)':
-    'prefix': 'LockWindow(off)'
-    'body': 'LockWindow(off)$1'
+    body: 'LockWindow(off)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'LockWindow(off)'
   'LockWindow(on)':
-    'prefix': 'LockWindow(on)'
-    'body': 'LockWindow(on)$1'
+    body: 'LockWindow(on)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'LockWindow(on)'
   'LogSet()':
-    'prefix': 'LogSet()'
-    'body': 'LogSet(${1:value})$2'
+    body: 'LogSet(${1:value})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'LogSet()'
   'LogSet(off)':
-    'prefix': 'LogSet(off)'
-    'body': 'LogSet(off)$1'
+    body: 'LogSet(off)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'LogSet(off)'
   'LogSet(on)':
-    'prefix': 'LogSet(on)'
-    'body': 'LogSet(on)$1'
+    body: 'LogSet(on)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'LogSet(on)'
   'LogText()':
-    'prefix': 'LogText()'
-    'body': 'LogText("${1:text}")$2'
+    body: 'LogText("${1:text}")$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'LogText()'
   'MsgBox()':
-    'prefix': 'MsgBox()'
-    'body': 'MsgBox("${1:buttons}", "${2:message}"${3:, ${4:options}${5:, ${6:sd}}})$7'
+    body: 'MsgBox("${1:buttons}", "${2:message}"${3:, ${4:options}${5:, ${6:sd}}})$7'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'MsgBox()'
   'MsgBox(ABORTRETRYIGNORE)':
-    'prefix': 'MsgBox(ABORTRETRYIGNORE)'
-    'body': 'MsgBox("ABORTRETRYIGNORE", "${1:message}"${2:, ${3:options}${4:, ${5:sd}}})$6'
+    body: 'MsgBox("ABORTRETRYIGNORE", "${1:message}"${2:, ${3:options}${4:, ${5:sd}}})$6'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'MsgBox(ABORTRETRYIGNORE)'
   'MsgBox(OK)':
-    'prefix': 'MsgBox(OK)'
-    'body': 'MsgBox("OK", "${1:message}"${2:, ${3:options}${4:, ${5:sd}}})$6'
+    body: 'MsgBox("OK", "${1:message}"${2:, ${3:options}${4:, ${5:sd}}})$6'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'MsgBox(OK)'
   'MsgBox(OKCANCEL)':
-    'prefix': 'MsgBox(OKCANCEL)'
-    'body': 'MsgBox("OKCANCEL", "${1:message}"${2:, ${3:options}${4:, ${5:sd}}})$6'
+    body: 'MsgBox("OKCANCEL", "${1:message}"${2:, ${3:options}${4:, ${5:sd}}})$6'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'MsgBox(OKCANCEL)'
   'MsgBox(RETRYCANCEL)':
-    'prefix': 'MsgBox(RETRYCANCEL)'
-    'body': 'MsgBox("RETRYCANCEL", "${1:message}"${2:, ${3:options}${4:, ${5:sd}}})$6'
+    body: 'MsgBox("RETRYCANCEL", "${1:message}"${2:, ${3:options}${4:, ${5:sd}}})$6'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'MsgBox(RETRYCANCEL)'
   'MsgBox(YESNO)':
-    'prefix': 'MsgBox(YESNO)'
-    'body': 'MsgBox("YESNO", "${1:message}"${2:, ${3:options}${4:, ${5:sd}}})$6'
+    body: 'MsgBox("YESNO", "${1:message}"${2:, ${3:options}${4:, ${5:sd}}})$6'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'MsgBox(YESNO)'
   'MsgBox(YESNOCANCEL)':
-    'prefix': 'MsgBox(YESNOCANCEL)'
-    'body': 'MsgBox("YESNOCANCEL", "${1:message}"${2:, ${3:options}${4:, ${5:sd}}})$6'
+    body: 'MsgBox("YESNOCANCEL", "${1:message}"${2:, ${3:options}${4:, ${5:sd}}})$6'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'MsgBox(YESNOCANCEL)'
   'Pop()':
-    'prefix': 'Pop()'
-    'body': '${1:user_var} = Pop()$2'
+    body: '${1:user_var} = Pop()$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'Pop()'
   'Push()':
-    'prefix': 'Push()'
-    'body': 'Push(${1:string})$2'
+    body: 'Push(${1:string})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'Push()'
   'Quit()':
-    'prefix': 'Quit()'
-    'body': 'Quit()$1'
+    body: 'Quit()$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'Quit()'
   'ReadEnvStr()':
-    'prefix': 'ReadEnvStr()'
-    'body': 'ReadEnvStr(${1:name})$2'
+    body: 'ReadEnvStr(${1:name})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'ReadEnvStr()'
   'ReadINIStr()':
-    'prefix': 'ReadINIStr()'
-    'body': 'ReadINIStr("${1:ini_filename}", "${2:section_name}", "${3:entry_name}")$4'
+    body: 'ReadINIStr("${1:ini_filename}", "${2:section_name}", "${3:entry_name}")$4'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'ReadINIStr()'
   'ReadRegDWORD()':
-    'prefix': 'ReadRegDWORD()'
-    'body': 'ReadRegDWORD("${1:root_key}", "${2:sub_key}", "${3:name}")$4'
+    body: 'ReadRegDWORD("${1:root_key}", "${2:sub_key}", "${3:name}")$4'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'ReadRegDWORD()'
   'ReadRegStr()':
-    'prefix': 'ReadRegStr()'
-    'body': 'ReadRegStr("${1:root_key}", "${2:sub_key}", "${3:name}")$4'
+    body: 'ReadRegStr("${1:root_key}", "${2:sub_key}", "${3:name}")$4'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'ReadRegStr()'
   'Reboot()':
-    'prefix': 'Reboot()'
-    'body': 'Reboot()$1'
+    body: 'Reboot()$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'Reboot()'
   'RegDLL()':
-    'prefix': 'RegDLL()'
-    'body': 'RegDLL("${1:file}"${2:, ${3:options}})$4'
+    body: 'RegDLL("${1:file}"${2:, ${3:options}})$4'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'RegDLL()'
   'Rename()':
-    'prefix': 'Rename()'
-    'body': 'Rename("${1:source}", "${2:target}"${3:, "${4:options}"})$5'
+    body: 'Rename("${1:source}", "${2:target}"${3:, "${4:options}"})$5'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'Rename()'
   'ReserveFile()':
-    'prefix': 'ReserveFile()'
-    'body': 'ReserveFile("${1:file}"${2:, "${3:options}"})$4'
+    body: 'ReserveFile("${1:file}"${2:, "${3:options}"})$4'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'ReserveFile()'
   'RMDir()':
-    'prefix': 'RMDir()'
-    'body': 'RMDir("${1:directory}"${2:, "${3:options}"})$4'
+    body: 'RMDir("${1:directory}"${2:, "${3:options}"})$4'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'RMDir()'
   'SearchPath()':
-    'prefix': 'SearchPath()'
-    'body': 'SearchPath("${1:filename}")$2'
+    body: 'SearchPath("${1:filename}")$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SearchPath()'
   'SectionGetFlags()':
-    'prefix': 'SectionGetFlags()'
-    'body': 'SectionGetFlags(${1:section_index})$2'
+    body: 'SectionGetFlags(${1:section_index})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SectionGetFlags()'
   'SectionGetInstTypes()':
-    'prefix': 'SectionGetInstTypes()'
-    'body': 'SectionGetInstTypes(${1:section_index})$2'
+    body: 'SectionGetInstTypes(${1:section_index})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SectionGetInstTypes()'
   'SectionGetSize()':
-    'prefix': 'SectionGetSize()'
-    'body': 'SectionGetSize(${1:section_index})$2'
+    body: 'SectionGetSize(${1:section_index})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SectionGetSize()'
   'SectionSetFlags()':
-    'prefix': 'SectionSetFlags()'
-    'body': 'SectionSetFlags(${1:section_index}, ${2:inst_types})$3'
+    body: 'SectionSetFlags(${1:section_index}, ${2:inst_types})$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SectionSetFlags()'
   'SectionSetInstTypes()':
-    'prefix': 'SectionSetInstTypes()'
-    'body': 'SectionSetInstTypes(${1:section_index}, ${2:section_flags})$3'
+    body: 'SectionSetInstTypes(${1:section_index}, ${2:section_flags})$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SectionSetInstTypes()'
   'SectionSetSize()':
-    'prefix': 'SectionSetSize()'
-    'body': 'SectionSetSize(${1:handle}, ${2:maxlen})$3'
+    body: 'SectionSetSize(${1:handle}, ${2:maxlen})$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SectionSetSize()'
   'SectionSetText()':
-    'prefix': 'SectionSetText()'
-    'body': 'SectionSetText(${1:section_index}, "${2:section_text}")$3'
+    body: 'SectionSetText(${1:section_index}, "${2:section_text}")$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SectionSetText()'
   'SendMessage()':
-    'prefix': 'SendMessage()'
-    'body': 'SendMessage(${1:hwnd}, ${2:msg}, ${3:wparam}, ${4:lparam}${5:, ${6:timeout_in_ms}})$7'
+    body: 'SendMessage(${1:hwnd}, ${2:msg}, ${3:wparam}, ${4:lparam}${5:, ${6:timeout_in_ms}})$7'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SendMessage()'
   'SetAutoClose()':
-    'prefix': 'SetAutoClose()'
-    'body': 'SetAutoClose(${1:value})$2'
+    body: 'SetAutoClose(${1:value})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetAutoClose()'
   'SetAutoClose(false)':
-    'prefix': 'SetAutoClose(false)'
-    'body': 'SetAutoClose(false)$2'
+    body: 'SetAutoClose(false)$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetAutoClose(false)'
   'SetAutoClose(true)':
-    'prefix': 'SetAutoClose(true)'
-    'body': 'SetAutoClose(true)$2'
+    body: 'SetAutoClose(true)$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetAutoClose(true)'
   'SetCtlColors()':
-    'prefix': 'SetCtlColors()'
-    'body': 'SetCtlColors(${1:hwnd}${2:, ${3:branding}}, ${4:text_color}, ${5:bg_color})$6'
+    body: 'SetCtlColors(${1:hwnd}${2:, ${3:branding}}, ${4:text_color}, ${5:bg_color})$6'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetCtlColors()'
   'SetCurInstType()':
-    'prefix': 'SetCurInstType()'
-    'body': 'SetCurInstType(${1:inst_type_idx})$2'
+    body: 'SetCurInstType(${1:inst_type_idx})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetCurInstType()'
   'SetDetailsPrint()':
-    'prefix': 'SetDetailsPrint()'
-    'body': 'SetDetailsPrint(${1:value})$2'
+    body: 'SetDetailsPrint(${1:value})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetDetailsPrint()'
   'SetDetailsPrint(both)':
-    'prefix': 'SetDetailsPrint(both)'
-    'body': 'SetDetailsPrint(both)$1'
+    body: 'SetDetailsPrint(both)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetDetailsPrint(both)'
   'SetDetailsPrint(lastused)':
-    'prefix': 'SetDetailsPrint(lastused)'
-    'body': 'SetDetailsPrint(lastused)$1'
+    body: 'SetDetailsPrint(lastused)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetDetailsPrint(lastused)'
   'SetDetailsPrint(listonly)':
-    'prefix': 'SetDetailsPrint(listonly)'
-    'body': 'SetDetailsPrint(listonly)$1'
+    body: 'SetDetailsPrint(listonly)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetDetailsPrint(listonly)'
   'SetDetailsPrint(none)':
-    'prefix': 'SetDetailsPrint(none)'
-    'body': 'SetDetailsPrint(none)$1'
+    body: 'SetDetailsPrint(none)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetDetailsPrint(none)'
   'SetDetailsPrint(textonly)':
-    'prefix': 'SetDetailsPrint(textonly)'
-    'body': 'SetDetailsPrint(textonly)$1'
+    body: 'SetDetailsPrint(textonly)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetDetailsPrint(textonly)'
   'SetDetailsView()':
-    'prefix': 'SetDetailsView()'
-    'body': 'SetDetailsView(${1:value})$2'
+    body: 'SetDetailsView(${1:value})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetDetailsView()'
   'SetDetailsView(hide)':
-    'prefix': 'SetDetailsView(hide)'
-    'body': 'SetDetailsView(hide)$1'
+    body: 'SetDetailsView(hide)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetDetailsView(hide)'
   'SetDetailsView(show)':
-    'prefix': 'SetDetailsView(show)'
-    'body': 'SetDetailsView(show)$1'
+    body: 'SetDetailsView(show)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetDetailsView(show)'
   'SetErrorLevel()':
-    'prefix': 'SetErrorLevel()'
-    'body': 'SetErrorLevel(${1:error_level})$2'
+    body: 'SetErrorLevel(${1:error_level})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetErrorLevel()'
   'SetErrorLevel(0)':
-    'prefix': 'SetErrorLevel(0)'
-    'body': 'SetErrorLevel(0)$1'
+    body: 'SetErrorLevel(0)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetErrorLevel(0)'
   'SetErrorLevel(1)':
-    'prefix': 'SetErrorLevel(1)'
-    'body': 'SetErrorLevel(1)$1'
+    body: 'SetErrorLevel(1)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetErrorLevel(1)'
   'SetErrorLevel(2)':
-    'prefix': 'SetErrorLevel(2)'
-    'body': 'SetErrorLevel(2)$1'
+    body: 'SetErrorLevel(2)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetErrorLevel(2)'
   'SetErrors()':
-    'prefix': 'SetErrors()'
-    'body': 'SetErrors()$1'
+    body: 'SetErrors()$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetErrors()'
   'SetFileAttributes()':
-    'prefix': 'SetFileAttributes()'
-    'body': 'SetFileAttributes("${1:filename}", ${2:attributes})$3'
+    body: 'SetFileAttributes("${1:filename}", ${2:attributes})$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetFileAttributes()'
   'SetOutPath()':
-    'prefix': 'SetOutPath()'
-    'body': 'SetOutPath("${1:path}")$2'
+    body: 'SetOutPath("${1:path}")$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetOutPath()'
   'SetRebootFlag()':
-    'prefix': 'SetRebootFlag()'
-    'body': 'SetRebootFlag(${1:value})$2'
+    body: 'SetRebootFlag(${1:value})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetRebootFlag()'
   'SetRebootFlag(false)':
-    'prefix': 'SetRebootFlag(false)'
-    'body': 'SetRebootFlag(false)$1'
+    body: 'SetRebootFlag(false)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetRebootFlag(false)'
   'SetRebootFlag(true)':
-    'prefix': 'SetRebootFlag(true)'
-    'body': 'SetRebootFlag(true)$1'
+    body: 'SetRebootFlag(true)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetRebootFlag(true)'
   'SetRegView()':
-    'prefix': 'SetRegView()'
-    'body': 'SetRegView(${1:value})$2'
+    body: 'SetRegView(${1:value})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetRegView()'
   'SetRegView(32)':
-    'prefix': 'SetRegView(32)'
-    'body': 'SetRegView(32)$1'
+    body: 'SetRegView(32)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetRegView(32)'
   'SetRegView(64)':
-    'prefix': 'SetRegView(64)'
-    'body': 'SetRegView(64)$1'
+    body: 'SetRegView(64)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetRegView(64)'
   'SetRegView(lastused)':
-    'prefix': 'SetRegView(lastused)'
-    'body': 'SetRegView(lastused)$1'
+    body: 'SetRegView(lastused)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetRegView(lastused)'
   'SetShellVarContext()':
-    'prefix': 'SetShellVarContext()'
-    'body': 'SetShellVarContext(${1:value})$2'
+    body: 'SetShellVarContext(${1:value})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetShellVarContext()'
   'SetShellVarContext(all)':
-    'prefix': 'SetShellVarContext(all)'
-    'body': 'SetShellVarContext(all)$1'
+    body: 'SetShellVarContext(all)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetShellVarContext(all)'
   'SetShellVarContext(current)':
-    'prefix': 'SetShellVarContext(current)'
-    'body': 'SetShellVarContext(current)$1'
+    body: 'SetShellVarContext(current)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetShellVarContext(current)'
   'SetSilent()':
-    'prefix': 'SetSilent()'
-    'body': 'SetSilent(${1:value})$2'
+    body: 'SetSilent(${1:value})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetSilent()'
   'SetSilent(normal)':
-    'prefix': 'SetSilent(normal)'
-    'body': 'SetSilent(normal)$1'
+    body: 'SetSilent(normal)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetSilent(normal)'
   'SetSilent(silent)':
-    'prefix': 'SetSilent(silent)'
-    'body': 'SetSilent(silent)$1'
+    body: 'SetSilent(silent)$1'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'SetSilent(silent)'
   'ShowWindow()':
-    'prefix': 'ShowWindow()'
-    'body': 'ShowWindow(${1:hwnd}, ${2:value})$3'
+    body: 'ShowWindow(${1:hwnd}, ${2:value})$3'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'ShowWindow()'
   'Sleep()':
-    'prefix': 'Sleep()'
-    'body': 'Sleep(${1:sleeptime_in_ms})$2'
+    body: 'Sleep(${1:sleeptime_in_ms})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'Sleep()'
   'StrCmp()':
-    'prefix': 'StrCmp()'
-    'body': 'StrCmp(${1:str1}, ${2:str2}, ${3:jump_if_equal}${4:, ${5:jump_if_val1_less}})$6'
+    body: 'StrCmp(${1:str1}, ${2:str2}, ${3:jump_if_equal}${4:, ${5:jump_if_val1_less}})$6'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'StrCmp()'
   'StrCpy()':
-    'prefix': 'StrCpy()'
-    'body': 'StrCpy(${1:str}${2:, ${3:maxlen}${4:, ${5:start_offset}}})$6'
+    body: 'StrCpy(${1:str}${2:, ${3:maxlen}${4:, ${5:start_offset}}})$6'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'StrCpy()'
   'StrLen()':
-    'prefix': 'StrLen()'
-    'body': 'StrLen(${1:str})$2'
+    body: 'StrLen(${1:str})$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'StrLen()'
   'UnRegDLL()':
-    'prefix': 'UnRegDLL()'
-    'body': 'UnRegDLL("${1:dllfile}")$2'
+    body: 'UnRegDLL("${1:dllfile}")$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'UnRegDLL()'
   'Var':
-    'prefix': 'Var'
-    'body': 'Var ${1:user_vars}$2'
+    body: 'Var ${1:user_vars}$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'Var'
   'WordFind()':
-    'prefix': 'WordFind()'
-    'body': 'WordFind("${1:string}", "${2:options}", "${3:delimiter1}"${4:, "${5:delimiter2}"${6:, "${7:center}"}})$8'
+    body: 'WordFind("${1:string}", "${2:options}", "${3:delimiter1}"${4:, "${5:delimiter2}"${6:, "${7:center}"}})$8'
+    leftLabelHTML: "<span class='syntax--support function'>WordFunc.nsh</span>"
+    prefix: 'WordFind()'
   'WordFindS()':
-    'prefix': 'WordFindS()'
-    'body': 'WordFindS("${1:string}", "${2:options}", "${3:delimiter1}"${4:, "${5:delimiter2}"${6:, "${7:center}"}})$8'
+    body: 'WordFindS("${1:string}", "${2:options}", "${3:delimiter1}"${4:, "${5:delimiter2}"${6:, "${7:center}"}})$8'
+    leftLabelHTML: "<span class='syntax--support function'>WordFunc.nsh</span>"
+    prefix: 'WordFindS()'
   'WordReplace()':
-    'prefix': 'WordReplace()'
-    'body': 'WordReplace("${1:string}", "${2:word1}", "${3:word2}", "${4:options}")$5'
+    leftLabelHTML: "<span class='syntax--support function'>WordFunc.nsh</span>"
+    body: 'WordReplace("${1:string}", "${2:word1}", "${3:word2}", "${4:options}")$5'
+    prefix: 'WordReplace()'
   'WordReplaceS()':
-    'prefix': 'WordReplaceS()'
-    'body': 'WordReplaceS("${1:string}", "${2:word1}", "${3:word2}", "${4:options}")$5'
+    body: 'WordReplaceS("${1:string}", "${2:word1}", "${3:word2}", "${4:options}")$5'
+    leftLabelHTML: "<span class='syntax--support function'>WordFunc.nsh</span>"
+    prefix: 'WordReplaceS()'
   'WriteINIStr()':
-    'prefix': 'WriteINIStr()'
-    'body': 'WriteINIStr("${1:ini_filename}", "${2:section_name}", "${3:entry_name}", "${4:value}")$5'
+    body: 'WriteINIStr("${1:ini_filename}", "${2:section_name}", "${3:entry_name}", "${4:value}")$5'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'WriteINIStr()'
   'WriteRegBin()':
-    'prefix': 'WriteRegBin()'
-    'body': 'WriteRegBin("${1:root_key}", "${2:subkey}", "${3:key_name}", "${4:value_data}")$5'
+    body: 'WriteRegBin("${1:root_key}", "${2:subkey}", "${3:key_name}", "${4:value_data}")$5'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'WriteRegBin()'
   'WriteRegDWORD()':
-    'prefix': 'WriteRegDWORD()'
-    'body': 'WriteRegDWORD("${1:root_key}", "${2:subkey}", "${3:key_name}", "${4:value}")$5'
+    body: 'WriteRegDWORD("${1:root_key}", "${2:subkey}", "${3:key_name}", "${4:value}")$5'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'WriteRegDWORD()'
   'WriteRegExpandStr()':
-    'prefix': 'WriteRegExpandStr()'
-    'body': 'WriteRegExpandStr("${1:root_key}", "${2:subkey}", "${3:key_name}", "${4:value}")$5'
+    body: 'WriteRegExpandStr("${1:root_key}", "${2:subkey}", "${3:key_name}", "${4:value}")$5'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'WriteRegExpandStr()'
   'WriteRegStr()':
-    'prefix': 'WriteRegStr()'
-    'body': 'WriteRegStr("${1:root_key}", "${2:subkey}", "${3:key_name}", "${4:value}")$5'
+    body: 'WriteRegStr("${1:root_key}", "${2:subkey}", "${3:key_name}", "${4:value}")$5'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'WriteRegStr()'
   'WriteUninstaller()':
-    'prefix': 'WriteUninstaller()'
-    'body': 'WriteUninstaller("${1:path}.exe")$2'
+    body: 'WriteUninstaller("${1:path}.exe")$2'
+    leftLabelHTML: "<span class='syntax--keyword'>K</span>"
+    prefix: 'WriteUninstaller()'
