@@ -61,7 +61,7 @@ module.exports = BridlensisCore =
     # Register commands
     @subscriptions.add atom.commands.add "atom-workspace", "BridleNSIS:save-&-transpile": => @buildScript(@consolePanel)
 
-    @satisfyDependencies()if atom.config.get("#{meta.name}.manageDependencies") and atom.inSpecMode is false
+    @satisfyDependencies() if atom.config.get("#{meta.name}.manageDependencies") is true
     @isPathSetup() if atom.config.get("#{meta.name}.mutePathWarning") is false
 
   deactivate: ->
