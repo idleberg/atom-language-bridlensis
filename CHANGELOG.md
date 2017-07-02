@@ -1,3 +1,13 @@
+# v3.6.3 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v3.6.3)
+
+- fix file extensions
+- update `devDependencies`
+
+# v3.6.2 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v3.6.2)
+
+- fix dependency management
+- update `devDependencies`
+
 # v3.6.1 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v3.6.1)
 
 - use real-world example in `README.md`
