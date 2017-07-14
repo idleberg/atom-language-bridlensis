@@ -1,3 +1,9 @@
+# v4.0.0 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.0.0)
+
+- add support to open transpiled scripts
+- split code into modules
+- update `devDependencies`
+
 # v3.6.3 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v3.6.3)
 
 - fix file extensions
