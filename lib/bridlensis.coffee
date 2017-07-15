@@ -41,6 +41,9 @@ module.exports = BridleNsis =
       hasError = false
 
       bridleCmd.stdout.on "data", (data) ->
+        if data.indexOf("Exit Code:") isnt -1
+          hasError = true
+
         try
           consolePanel.log(data.toString()) if atom.config.get("language-bridlensis.alwaysShowOutput")
         catch

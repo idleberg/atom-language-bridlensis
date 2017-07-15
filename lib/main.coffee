@@ -1,5 +1,3 @@
-
-
 module.exports = BridlensisCore =
   config:
     pathToJar:
