@@ -1,3 +1,7 @@
+# v4.0.1 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.0.1)
+
+- improve error detection
+
 # v4.0.0 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.0.0)
 
 - add support to open transpiled scripts
