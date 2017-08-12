@@ -1,3 +1,9 @@
+# v4.1.0 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.1.0)
+
+- use async `TextEditor.save()` (closes #1)
+- bump minimum Atom version to v1.19
+- Travis CI: test against Node versions 6 & 8
+
 # v4.0.1 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.0.1)
 
 - improve error detection
