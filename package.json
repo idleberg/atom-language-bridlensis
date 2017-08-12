@@ -17,7 +17,7 @@
   "repository": "https://github.com/idleberg/atom-language-bridlensis",
   "main": "lib/main.coffee",
   "engines": {
-    "atom": ">=1.0.0 <2.0.0"
+    "atom": ">=1.19.0 <2.0.0"
   },
   "package-deps": [
     "language-nsis"
