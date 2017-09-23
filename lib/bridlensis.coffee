@@ -4,6 +4,8 @@ module.exports = BridleNsis =
     { spawn } = require "child_process"
     { notifyOnSucess } = require "./util"
 
+    require("./ga").sendEvent "bridlensis", "Save & Transpile"
+
     editor = atom.workspace.getActiveTextEditor()
 
     unless editor?
