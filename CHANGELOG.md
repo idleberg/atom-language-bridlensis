@@ -1,3 +1,7 @@
+# v4.2.0 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.2.0)
+
+- add metrics support
+
 # v4.1.0 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.1.0)
 
 - use async `TextEditor.save()` (closes #1)
