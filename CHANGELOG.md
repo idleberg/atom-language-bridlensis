@@ -1,3 +1,7 @@
+# v4.2.1 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.2.1)
+
+- remove activation event
+
 # v4.2.0 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.2.0)
 
 - add metrics support
