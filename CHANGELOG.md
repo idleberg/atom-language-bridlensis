@@ -1,3 +1,8 @@
+# v4.3.0 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.3.0)
+
+- add button icons
+
+
 # v4.2.1 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.2.1)
 
 - remove activation event
