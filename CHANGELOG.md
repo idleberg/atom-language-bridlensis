@@ -1,6 +1,6 @@
 # v4.3.1 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.3.1)
 
-- update default GA parameter
+- update default GA parameters
 - update dependencies
 
 # v4.3.0 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.3.0)
