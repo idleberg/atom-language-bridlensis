@@ -1,3 +1,7 @@
+# v4.3.2 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.3.2)
+
+- fix anonymizerIP parameter
+
 # v4.3.1 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.3.1)
 
 - update default GA parameters
