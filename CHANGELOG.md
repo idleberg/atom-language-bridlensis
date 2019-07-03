@@ -1,3 +1,10 @@
+# v4.4.0 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.4.0)
+
+- bundle with Webpack
+- add activation hooks
+- remove metrics
+- update dependencies
+
 # v4.3.2 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.3.2)
 
 - fix `anonymizerIP` parameter
