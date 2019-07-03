@@ -28,6 +28,11 @@
   "package-deps": [
     "language-nsis"
   ],
+    "activationCommands": {
+      "atom-workspace": [
+        "BridleNSIS:save-&-transpile"
+      ]
+    },
   "consumedServices": {
     "console-panel": {
       "versions": {
