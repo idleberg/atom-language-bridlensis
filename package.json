@@ -1,6 +1,6 @@
 {
   "name": "language-bridlensis",
-  "version": "4.3.2",
+  "version": "4.4.0",
   "description": "Atom language support for BridleNSIS, including grammar, snippets and build system",
   "license": "MIT OR GPL-2.0",
   "scripts": {
@@ -28,11 +28,11 @@
   "package-deps": [
     "language-nsis"
   ],
-    "activationCommands": {
-      "atom-workspace": [
-        "BridleNSIS:save-&-transpile"
-      ]
-    },
+  "activationCommands": {
+    "atom-workspace": [
+      "BridleNSIS:save-&-transpile"
+    ]
+  },
   "consumedServices": {
     "console-panel": {
       "versions": {
