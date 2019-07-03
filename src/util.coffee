@@ -14,14 +14,12 @@ module.exports = Util =
               text: "Open Settings"
               className: "icon icon-gear"
               onDidClick: ->
-                require("./ga").sendEvent "util", "Open Settings"
                 atom.workspace.open("atom://config/packages/language-bridlensis")
                 notification.dismiss()
             },
             {
               text: "Ignore",
               onDidClick: ->
-                require("./ga").sendEvent "util", "Mute Path Warning"
                 atom.config.set("language-bridlensis.mutePathWarning", true)
                 notification.dismiss()
             }
@@ -37,7 +35,6 @@ module.exports = Util =
           text: "Open"
           className: "icon icon-pencil"
           onDidClick: ->
-            require("./ga").sendEvent "util", "Open Transpiled Script"
             Util.openScript()
             notification.dismiss()
         }
@@ -70,7 +67,6 @@ module.exports = Util =
   satisfyDependencies: () ->
     meta = require "../package.json"
 
-    require("./ga").sendEvent "util", "Satisfy Dependencies"
     require("atom-package-deps").install(meta.name)
 
     for k, v of meta["package-deps"]

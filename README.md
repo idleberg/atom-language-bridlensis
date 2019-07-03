@@ -1,11 +1,11 @@
 # BridleNSIS for Atom
 
-[![apm](https://img.shields.io/apm/l/language-bridlensis.svg?style=flat-square)](https://atom.io/packages/language-bridlensis)
-[![apm](https://img.shields.io/apm/v/language-bridlensis.svg?style=flat-square)](https://atom.io/packages/language-bridlensis)
-[![apm](https://img.shields.io/apm/dm/language-bridlensis.svg?style=flat-square)](https://atom.io/packages/language-bridlensis)
-[![Travis](https://img.shields.io/travis/idleberg/atom-language-bridlensis.svg?style=flat-square)](https://travis-ci.org/idleberg/atom-language-bridlensis)
-[![David](https://img.shields.io/david/dev/idleberg/atom-language-bridlensis.svg?style=flat-square)](https://david-dm.org/idleberg/atom-language-bridlensis?type=dev)
-[![Gitter](https://img.shields.io/badge/chat-Gitter-ed1965.svg?style=flat-square)](https://gitter.im/NSIS-Dev/Atom)
+[![apm](https://flat.badgen.net/apm/license/language-bridlensis)](https://atom.io/packages/language-bridlensis)
+[![apm](https://flat.badgen.net/apm/v/language-bridlensis)](https://atom.io/packages/language-bridlensis)
+[![apm](https://flat.badgen.net/apm/dl/language-bridlensis)](https://atom.io/packages/language-bridlensis)
+[![CircleCI](https://flat.badgen.net/circleci/github/idleberg/atom-language-bridlensis)](https://circleci.com/gh/idleberg/atom-language-bridlensis)
+[![David](https://flat.badgen.net/david/dep/idleberg/atom-language-bridlensis)](https://david-dm.org/idleberg/atom-language-bridlensis)
+[![Gitter](https://flat.badgen.net/badge/chat/on%20gitter/ff69b4)](https://gitter.im/NSIS-Dev/Atom)
 
 Atom language support for [BridleNSIS](https://github.com/henrikor2/bridlensis), including grammar, snippets and build system
 
