@@ -1,3 +1,8 @@
+# v5.0.0 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v5.0.0)
+
+- **Breaking change:** arguments need to be passed as array
+- update dependencies
+
 # v4.4.0 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v4.4.0)
 
 - bundle with Webpack
