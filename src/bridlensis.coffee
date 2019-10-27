@@ -19,7 +19,7 @@ module.exports = BridleNsis =
         defaultArguments = ["-jar", bridleJar]
 
         if atom.config.get("language-bridlensis.customArguments").length > 0
-          customArguments = atom.config.get("language-bridlensis.customArguments").trim().split(" ")
+          customArguments = atom.config.get("language-bridlensis.customArguments")
         else
           customArguments = []
 

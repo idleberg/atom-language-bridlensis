@@ -1,3 +1,7 @@
+# v5.0.1 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v5.0.1)
+
+- fix argument handling
+
 # v5.0.0 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v5.0.0)
 
 - **Breaking change:** arguments need to be passed as array
