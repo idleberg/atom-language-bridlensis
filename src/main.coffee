@@ -14,9 +14,13 @@ module.exports = BridlensisCore =
       order: 1
     customArguments:
       title: "Custom Arguments"
-      description: "Specify your preferred [arguments](https://github.com/henrikor2/bridlensis/blob/master/src/main/resources/bridlensis/USAGE) for BridleNSIS"
-      type: "string"
-      default: ""
+      description: "Specify your preferred [arguments](https://github.com/henrikor2/bridlensis/blob/master/src/main/resources/bridlensis/USAGE) for BridleNSIS, separated by commas"
+      type: "array"
+      default: [
+        ""
+      ]
+      items:
+        type: "string"
       order: 2
     nsisHome:
       title: "NSIS Home"
