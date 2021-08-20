@@ -1,4 +1,4 @@
-module.exports = BridlensisCore =
+module.exports =
   config:
     pathToJar:
       title: "Path To JAR"

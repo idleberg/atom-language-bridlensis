@@ -1,4 +1,4 @@
-module.exports = BridleNsis =
+module.exports =
 
   transpile: (consolePanel) ->
     { spawn } = require "child_process"

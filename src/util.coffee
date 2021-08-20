@@ -7,7 +7,7 @@ module.exports = Util =
     access pathToJar, constants.R_OK | constants.W_OK, (error) ->
       if error
         notification = atom.notifications.addWarning(
-          "**language-bridlensis**: No valid \`BridleNSIS.jar\` was specified in your settings",
+          "**language-bridlensis**: No valid `BridleNSIS.jar` was specified in your settings",
           dismissable: true,
           buttons: [
             {
