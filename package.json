@@ -47,6 +47,7 @@
     "atom-satisfy-dependencies": "^0.3.0"
   },
   "devDependencies": {
+    "coffee-loader": "^3.0.0",
     "coffeescript": "^2.5.1",
     "eslint": "^7.32.0",
     "eslint-plugin-coffee": "^0.1.14",
