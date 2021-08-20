@@ -3,6 +3,7 @@
 - update toolchain
   - build with Rollup
   - replace linter
+  - update to `husky@v7`
   - run CI on GitHub
 
 # v5.0.1 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v5.0.1)
