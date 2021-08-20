@@ -54,9 +54,10 @@ module.exports =
       order: 7
   subscriptions: null
 
-  activate: (state) ->
+  activate: () ->
     { CompositeDisposable } = require "atom"
-    { isPathSetup, satisfyDependencies } = require "./util"
+    { isPathSetup } = require "./util"
+    { satisfyDependencies } = require "atom-satisfy-dependencies"
     { transpile } = require "./bridlensis"
 
     # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable

@@ -15,5 +15,8 @@ module.exports = {
     atom: "readonly"
   },
   parser: 'eslint-plugin-coffee',
-  plugins: ['coffee']
+  plugins: ['coffee'],
+  rules: {
+    'coffee/no-useless-escape': 'off'
+  }
 };
