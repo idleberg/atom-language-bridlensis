@@ -1,3 +1,10 @@
+# v5.1.0 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v5.1.0)
+
+- update toolchain
+  - build with Rollup
+  - replace linter
+  - run CI on GitHub
+
 # v5.0.1 [#](https://github.com/idleberg/atom-language-bridlensis/releases/tag/v5.0.1)
 
 - fix argument handling
